@@ -1,9 +1,11 @@
-pdfplumber
-simplejson
-requests
-PyYAML
-pillow
-reportlab
-pandas
-loguru
-openai
+-i https://mirrors.aliyun.com/pypi/simple
+pdfplumber==0.11.0
+simplejson==3.19.2
+requests==2.31.0
+PyYAML==6.0.1
+pillow==10.2.0
+reportlab==4.1.0
+pandas==2.2.1
+loguru==0.7.2
+openai==1.14.2
+Gooey~=1.0.8.1

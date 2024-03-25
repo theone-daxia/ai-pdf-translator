@@ -3,10 +3,12 @@ from enum import Enum, auto
 from PIL import Image as PILImage
 from utils import LOG
 
+
 class ContentType(Enum):
     TEXT = auto()
     TABLE = auto()
     IMAGE = auto()
+
 
 class Content:
     def __init__(self, content_type, original, translation=None):

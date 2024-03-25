@@ -1,7 +1,6 @@
-import requests
-import simplejson
 import time
 import os
+import httpx
 import openai
 
 from model import Model
@@ -12,7 +11,12 @@ from openai import OpenAI
 class OpenAIModel(Model):
     def __init__(self, model: str, api_key: str):
         self.model = model
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.client = OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY"),
+            http_client=httpx.Client(
+                proxies="http://127.0.0.1:7890"
+            )
+        )
 
     def make_request(self, prompt):
         attempts = 0
